@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="s1.css"/>
+        <link rel="website icon" type="png/jpg" href="logo.png">
+        <title>CALCULETRON</title>
+    </head>
+    <body background="picture.png" style="height:100vh ;">
+        <header>
+            <div class="navbar">
+                <div class="logo">CALCULETRON</div>
+                <ul class="links">
+                    <li><a href="c1.html">Home</a></li>
+                    <li><a href="c3.html">Basic</a></li>
+                    <li><a href="c2.html">BMI</a></li>
+                    <li><a href="c4.html" id="bc">Tempreture</a></li>
+                    <li><a href="c5.html">Num-system</a></li>
+                    <li><a href="c6.html">Age</a></li>
+                </ul>
+                
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="c1.html">Home</a></li>
+                    <li><a href="c3.html">Basic</a></li>
+                    <li><a href="c2.html">BMI</a></li>
+                    <li><a href="c4.html">Tempreture</a></li>
+                    <li><a href="c5.html">Num-system</a></li>
+                    <li><a href="c6.html">Age</a></li>
+                
+            </div>
+        </header>
+        <main>
+            <section id="hero">
+            <center>
+              <div id="cal">  
+                <h1>Temperature Converter</h1>
+                <label for="tempValue">Enter Temperature:</label>
+                <input type="number" id="tempValue" placeholder="Value"><br><br>
+                
+                <label for="tempType">Select Type:</label>
+                <select id="tempType">
+                    <option value="c">Celsius (°C)</option>
+                    <option value="f">Fahrenheit (°F)</option>
+                    <option value="k">Kelvin (K)</option>
+                </select><br><br>
+                
+                <button  id="bu"  onclick="convertTemperature()">Convert</button><br>
+                
+                <h2>Converted Values:</h2>
+                <br>
+                <p id="result"></p>
+            
+              </div>
+              </center>
+            </section>
+        </main>
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen  = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+
+            function convertTemperature() {
+            const value = parseFloat(document.getElementById('tempValue').value);
+            const type = document.getElementById('tempType').value;
+            let celsius, fahrenheit, kelvin;
+
+            if (type === 'c') {
+                celsius = value;
+                fahrenheit = (celsius * 9/5) + 32;
+                kelvin = celsius + 273.15;
+            } else if (type === 'f') {
+                fahrenheit = value;
+                celsius = (fahrenheit - 32) * 5/9;
+                kelvin = celsius + 273.15;
+            } else if (type === 'k') {
+                kelvin = value;
+                celsius = kelvin - 273.15;
+                fahrenheit = (celsius * 9/5) + 32;
+            }
+
+            document.getElementById('result').innerHTML = 
+                `Celsius: ${celsius.toFixed(2)} °C<br>
+                Fahrenheit: ${fahrenheit.toFixed(2)} °F<br>
+                Kelvin: ${kelvin.toFixed(2)} K`;
+        }
+
+
+        
+        
+        </script>
+         <footer><p>&#169; 2025, CALCULETRON - developed by Debarshi Das. All rights reserved.</p></footer>
+    </body>
+</html>

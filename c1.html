@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="s1.css"/>
+        <link rel="website icon" type="png/jpg" href="logo.png">
+        <title>CALCULETRON</title>
+    </head>
+    <body background="picture4.jpeg">
+        <header>
+            <div class="navbar">
+                <div class="logo">CALCULETRON</div>
+                <ul class="links">
+                    <li><a href="c1.html">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#ser">Service</a></li>
+                    <li><a href="#co">Contact</a></li>
+                </ul>
+                <a href="c7.html" class="action_btn">Get Started</a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="c1.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#ser">Service</a></li>
+                <li><a href="#co">Contact</a></li>
+                <li><a href="c7.html" class="action_btn">Get Started</a></li>
+            </div>
+        </header>
+        <main>
+            <section id="hero">
+                <center>  
+                    <img src="character_1.png" width="25%" > 
+                <p id="m"><span>Why use ten platform when one is enough?</span><br><br>
+                    With Calculetron, you can crunch numbers, convert temperatures, check your BMI and perform many more calculations — all in one place.<br>
+                    No fuss. Just results. Try it now!</p>
+           
+
+            <div id="b">
+            <img src="abt.png" width="25%" id="about"><br>
+            <h1>About Calculetron</h1>
+            
+            <p id="n">Calculetron is your all-in-one, intelligent calculation companion—built to simplify complex
+                computations and everyday math tasks in a sleek, user-friendly interface. Whether you're a
+                student, professional, or just someone who needs quick and accurate results, Calculetron is
+                designed to deliver speed, precision, and versatility at your fingertips.<br>
+                With an expansive suite of powerful tools, Calculetron goes far beyond basic arithmetic. You can
+                perform addition, subtraction, multiplication, and division, but that’s just the beginning. Need to
+                calculate your BMI? Convert temperatures between Celsius, Fahrenheit, and Kelvin? Switch
+                between number systems like binary, decimal, octal, and hexadecimal? Or perhaps find out your
+                exact age in years? Calculetron handles it all effortlessly.
+            </p>
+            </div>
+            <div id="b">
+                <img src="plu.png" width="25%"  id="ser"><br>
+            <h1>Service</h1>
+            <ul>
+                <li id="n">Basic & Advanced Calculations - Perform standard math operations with precision.</li>
+                <li id="n">BMI Calculator - Know your health status in seconds.</li>
+                <li id="n">Temperature Conversion - Instantly switch between temperature scales.</li>
+                <li id="n">Number System Converter - Convert numbers across binary, decimal, octal, and
+                hexadecimal.</li>
+                <li id="n">Age Calculator - Get an accurate breakdown of your age with just a birthdate.</li>
+                <li id="n">More Tools Coming Soon - Constantly evolving with new features and smarter utilities.</li>
+            </ul><br>
+               <p id="n">Whether you're working on homework, coding, managing finances, or simply curious,
+                Calculetron is engineered to make your life easier. No ads, no distractions - just clean, reliable,
+                and powerful calculations.
+                Calculetron - Calculate Smarter, Live Easier</p>
+            </div>
+           
+            <div id="b">
+                <h1>Contact Owner</h1><br>            
+                <div id="co">
+                    <a href="https://www.facebook.com/debarshi.das.857596" class="fa-brands fa-square-facebook" style="margin: 1.5rem; font-size: 30px;"></a>
+                    <a href="mailto:debarshidas742@gmail.com" class="fa-regular fa-envelope" style="margin: 1.5rem; font-size: 30px;"></a>
+                    <a href="https://www.linkedin.com/in/debarshi-das-879352361" class="fa-brands fa-linkedin" style="margin: 1.5rem; font-size: 30px;"></a>
+                </div>
+            </div>
+          
+            <p id="l">So what are you waiting for?<br>Enhance your calculations with Calculetron today!</p>
+            </center>
+           
+        </section>
+        </main>
+
+        <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen  = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+                
+            }
+        
+            window.onscroll = function() {
+        const button = document.getElementById("backToTop");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+        </script>
+        <footer id="ft"><p>&#169; 2025, CALCULETRON - developed by Debarshi Das. All rights reserved.</p></footer>
+    </body>
+</html>

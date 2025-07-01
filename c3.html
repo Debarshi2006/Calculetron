@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="s1.css"/>
+        <link rel="website icon" type="png/jpg" href="logo.png">
+        <title>CALCULETRON</title>
+    </head>
+    <body background="picture.png" style="height:100vh ;">
+        <header>
+            <div class="navbar">
+                <div class="logo">CALCULETRON</div>
+                <ul class="links">
+                    <li><a href="c1.html">Home</a></li>
+                    <li><a href="c3.html" id="bc">Basic</a></li>
+                    <li><a href="c2.html">BMI</a></li>
+                    <li><a href="c4.html">Tempreture</a></li>
+                    <li><a href="c5.html">Num-system</a></li>
+                    <li><a href="c6.html">Age</a></li>
+                </ul>
+                
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="c1.html">Home</a></li>
+                    <li><a href="c3.html">Basic</a></li>
+                    <li><a href="c2.html">BMI</a></li>
+                    <li><a href="c4.html">Tempreture</a></li>
+                    <li><a href="c5.html">Num-system</a></li>
+                    <li><a href="c6.html">Age</a></li>
+                
+            </div>
+        </header>
+        <main>
+            <section id="hero">
+            <center>
+              <div id="calcu">  
+                <h1>Basic Calculator</h1>
+
+    <input type="text" id="display" readonly>
+    <div class="buttons">
+      <button onclick="clearDisplay()" id="bn">C</button>
+      <button onclick="deleteLast()" id="bn">⌫</button>
+      <button onclick="append('(')" id="bn">(</button>
+      <button onclick="append(')')" id="bn">)</button>
+
+      
+
+      <button onclick="append('Math.log10(')" id="bn">log</button>
+      <button onclick="append('Math.log(')" id="bn">ln</button>
+      <button onclick="append('Math.sqrt(')" id="bn">√</button>
+      <button onclick="append('Math.PI')" id="bn">π</button>
+
+      <button onclick="append('7')" id="bn">7</button>
+      <button onclick="append('8')" id="bn">8</button>
+      <button onclick="append('9')" id="bn">9</button>
+      <button onclick="append('/')" id="bn">÷</button>
+
+      <button onclick="append('4')" id="bn">4</button>
+      <button onclick="append('5')" id="bn">5</button>
+      <button onclick="append('6')" id="bn">6</button>
+      <button onclick="append('*')" id="bn">×</button>
+
+      <button onclick="append('1')" id="bn">1</button>
+      <button onclick="append('2')" id="bn">2</button>
+      <button onclick="append('3')" id="bn">3</button>
+      <button onclick="append('-')" id="bn">−</button>
+
+      <button onclick="append('0')" id="bn">0</button>
+      <button onclick="append('.')" id="bn">.</button>
+      <button onclick="calculate()" id="bn">=</button>
+      <button onclick="append('+')" id="bn">+</button>
+    </div>
+  </div>
+
+              
+              </center>
+            </section>
+        </main>
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen  = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+
+            function append(value) {
+  document.getElementById('display').value += value;
+}
+
+function clearDisplay() {
+  document.getElementById('display').value = '';
+}
+
+function deleteLast() {
+  let display = document.getElementById('display');
+  display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+  let display = document.getElementById('display');
+  try {
+    // Evaluate using JavaScript
+    display.value = eval(display.value);
+  } catch (e) {
+    display.value = 'Error';
+  }
+}
+
+
+        
+        </script>
+         <footer><p>&#169; 2025, CALCULETRON - developed by Debarshi Das. All rights reserved.</p></footer>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="s1.css"/>
+        <link rel="website icon" type="png/jpg" href="logo.png">
+        <title>CALCULETRON</title>
+    </head>
+    <body background="picture.png" style="height:100vh ;">
+        <header>
+            <div class="navbar">
+                <div class="logo">CALCULETRON</div>
+                <ul class="links">
+                    <li><a href="c1.html">Home</a></li>
+                    <li><a href="c3.html">Basic</a></li>
+                    <li><a href="c2.html">BMI</a></li>
+                    <li><a href="c4.html">Tempreture</a></li>
+                    <li><a href="c5.html" id="bc">Num-system</a></li>
+                    <li><a href="c6.html">Age</a></li>
+                </ul>
+                
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+            <div class="dropdown_menu">
+                <li><a href="c1.html">Home</a></li>
+                    <li><a href="c3.html">Basic</a></li>
+                    <li><a href="c2.html">BMI</a></li>
+                    <li><a href="c4.html">Tempreture</a></li>
+                    <li><a href="c5.html">Num-system</a></li>
+                    <li><a href="c6.html">Age</a></li>
+                
+            </div>
+        </header>
+        <main>
+            <section id="hero">
+            <center>
+              <div id="cal">  
+                <h1>Number System Calculator</h1>
+            <label for="number">Enter Number:</label>
+            <input type="text" id="number" placeholder="Enter your number"><br><br>
+            
+            <label for="type">Select Type:</label>
+            <select id="type">
+                <option value="binary">Binary</option>
+                <option value="decimal">Decimal</option>
+                <option value="hexadecimal">Hexadecimal</option>
+                <option value="octal">Octal</option>
+            </select><br><br>
+            
+            <button   id="bu" onclick="convertNumber()">Convert</button>
+            <br>
+        <h2>Answer:</h2>
+            <br>
+            <div class="result" id="result"></div>
+
+              </div>
+              </center>
+            </section>
+        </main>
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen  = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars'
+            }
+
+            function convertNumber() {
+            const number = document.getElementById('number').value;
+            const type = document.getElementById('type').value;
+            let result = '';
+
+            switch (type) {
+                case 'binary':
+                    result = `Decimal: ${parseInt(number, 2)}<br>Hexadecimal: ${parseInt(number, 2).toString(16).toUpperCase()}<br>Octal: ${parseInt(number, 2).toString(8)}`;
+                    break;
+                case 'decimal':
+                    result = `Binary: ${parseInt(number).toString(2)}<br>Hexadecimal: ${parseInt(number).toString(16).toUpperCase()}<br>Octal: ${parseInt(number).toString(8)}`;
+                    break;
+                case 'hexadecimal':
+                    result = `Binary: ${parseInt(number, 16).toString(2)}<br>Decimal: ${parseInt(number, 16)}<br>Octal: ${parseInt(number, 16).toString(8)}`;
+                    break;
+                case 'octal':
+                    result = `Binary: ${parseInt(number, 8).toString(2)}<br>Decimal: ${parseInt(number, 8)}<br>Hexadecimal: ${parseInt(number, 8).toString(16).toUpperCase()}`;
+                    break;
+                default:
+                    result = 'Invalid type selected.';
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+
+        
+        </script>
+         <footer><p>&#169; 2025, CALCULETRON - developed by Debarshi Das. All rights reserved.</p></footer>
+    </body>
+</html>
