@@ -212,7 +212,7 @@ footer{
     color: #fff;
     text-align: center;
     padding: 15px 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font-size: 14px;
@@ -379,7 +379,7 @@ html{
     color:white;
     background-color:rgba(7, 4, 0, 0.667);
     border-radius: 10px;
-    height: 580px;
+    height: 600px;
     width: 400px;
     box-shadow: 0 0 30px orangered, 0 0 30px orangered;
    
